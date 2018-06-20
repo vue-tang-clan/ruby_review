@@ -64,6 +64,27 @@ class Manager < Employee
 
     p @employees
   end
+
+  def fire_all_employees
+    puts "Firing all employees..."
+    # With a times loop
+    # index = 0
+    # num_employees = @employees.length
+    # num_employees.times do
+    #   @employees[index].active = false
+    #   index = index + 1
+    # end
+
+    # With an each loop
+    # @employees.each do |employee|
+    #   employee.active = false
+    # end
+
+    # With a one line each loop
+    @employees.each { |employee| employee.active = false }
+    
+    p @employees
+  end
 end
 
 manager = Manager.new(
@@ -76,3 +97,4 @@ manager = Manager.new(
 manager.print_info
 manager.send_report
 manager.give_all_raises
+manager.fire_all_employees
